@@ -80,7 +80,7 @@ try:
             except:
                     print("Não há mais chamados a serem respondidos!")    
         responde_chamado()
-        index += 1
+        ##index += 1 #O incremento aqui fazia com que o script pule um chamdo ao voltar para a lista por isso o removi.
         ##volta para a lista de chamados
         driver.get('https://sdpondemand.manageengine.com/app/itdesk/ui/requests')
 
