@@ -85,5 +85,15 @@ try:
         driver.get('https://sdpondemand.manageengine.com/app/itdesk/ui/requests')
 
 finally:
-    time.sleep(15)
+    time.sleep(5)
+    ##faz logoff da plataforma evitando que o número limete de sessões seja atingido
+    botao_perfil = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.ID, 'sdp_profile_popup'))
+        )  
+    botao_perfil.click()
+    botao_sair = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//button[contains(.,'Sair')]"))
+        )
+    botao_sair.click()
+    time.sleep(5)
     driver.quit()
